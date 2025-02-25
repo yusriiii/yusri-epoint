@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginRegisterController extends Controller
 {
+    public function index()
+    {
+        //get Data db
+        $users = user::latest()->paginate(10);
+
+        return view('admin.akun.index',compact('users'));
+    }
+    
     public function register()
     {
         return view('auth.register');

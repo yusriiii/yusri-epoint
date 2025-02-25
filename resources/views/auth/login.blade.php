@@ -3,10 +3,9 @@
 @section('content')
 
 <h1>login</h1>
-<a href="{[ route('register') }]">Daftar</a>
+<form action="{{  route('authenticate') }}" method="POST">
 <br><br>
-<form action="{{ route('authenticate') }}" method="post">
-    @csrf
+@csrf
     <label>Email Address</label>label><br>
     <input type="email" id="email" name="email" value="{{ old('email') }}"><br><br>
     <label>password</label><br>
